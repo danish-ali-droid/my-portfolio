@@ -190,7 +190,8 @@ nav.scrolled{
 }
 .badge-aws{top:-10px;right:-20px;animation:float1 3s ease-in-out infinite}
 .badge-docker{bottom:20px;left:-30px;animation:float2 3s ease-in-out infinite}
-.badge-k8s{bottom:-10px;right:-10px;animation:float1 3.5s ease-in-out infinite;animation-delay:.5s}
+.badge-linux{bottom:-10px;right:-10px;animation:float1 3.5s ease-in-out infinite;animation-delay:.5s}
+.badge-cicd{top:20%;left:-75px;transform:translateY(-50%);animation:float2 3.5s ease-in-out infinite;animation-delay:.7s}
 @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 .badge-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
@@ -410,9 +411,13 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
           <div class="badge-dot" style="background:#2496ed"></div>
           <span>Docker</span>
         </div>
-        <div class="badge badge-k8s">
-          <div class="badge-dot" style="background:#326ce5"></div>
-          <span>Kubernetes</span>
+        <div class="badge badge-linux">
+          <div class="badge-dot" style="background:#fcc624"></div>
+          <span>Linux</span>
+        </div>
+        <div class="badge badge-cicd">
+          <div class="badge-dot" style="background:#00a86b"></div>
+          <span>CI/CD Pipeline</span>
         </div>
       </div>
     </div>
@@ -459,17 +464,17 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
       <div class="proj-box reveal">
         <div class="proj-top">
-          <div><div class="proj-num">01</div><div class="proj-title">AWS Highly Available Architecture — VPC, ALB, Auto Scaling & Bastion Host</div></div>
-          <a href="https://github.com/danish-ali-droid/Aws" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
+          <div><div class="proj-num">01</div><div class="proj-title">Three-Tier Gym Management System — Automated CI/CD & Cloud Deployment on AWS</div></div>
+          <a href="https://github.com/danish-ali-droid/multi-tier-gymms-deployment" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
         </div>
         <ul class="proj-bullets">
-          <li>Custom VPC with /16 CIDR block spanning public and private subnets across multiple availability zones</li>
-          <li>Application Load Balancer and Bastion Host in public subnets for traffic distribution and controlled admin access</li>
-          <li>Auto Scaling Group in private subnets for automatic capacity adjustment, isolated from direct internet access</li>
-          <li>NAT Gateway for secure private outbound traffic and Internet Gateway for public ingress</li>
-          <li>IAM Role with AmazonS3ReadOnlyAccess on EC2 instances for secure asset retrieval without hardcoded credentials</li>
+          <li>Production-grade three-tier architecture: React + TypeScript frontend on NGINX, Node.js Express backend, PostgreSQL with primary-replica replication</li>
+          <li>Fully automated GitHub Actions CI/CD pipelines for frontend, backend, and database with separate ECR repositories</li>
+          <li>AWS infrastructure with public ALB for frontend, internal NLB for backend routing, and Auto Scaling Groups spanning multiple availability zones</li>
+          <li>High availability design with dual load balancers, multi-AZ deployment, PostgreSQL replication for read scaling and failover</li>
+          <li>Comprehensive security: JWT authentication, rate limiting, CORS protection, private subnet database, security group isolation</li>
         </ul>
-        <div class="proj-stack"><span class="stk">EC2</span><span class="stk">VPC</span><span class="stk">ALB</span><span class="stk">Auto Scaling</span><span class="stk">NAT Gateway</span><span class="stk">IAM</span><span class="stk">S3</span><span class="stk">Bastion Host</span></div>
+        <div class="proj-stack"><span class="stk">AWS EC2</span><span class="stk">ALB</span><span class="stk">NLB</span><span class="stk">Auto Scaling</span><span class="stk">ECR</span><span class="stk">GitHub Actions</span><span class="stk">Docker</span><span class="stk">React</span><span class="stk">Node.js</span><span class="stk">PostgreSQL</span><span class="stk">TypeScript</span></div>
       </div>
 
       <div class="proj-box reveal">
@@ -488,16 +493,17 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
       <div class="proj-box reveal">
         <div class="proj-top">
-          <div><div class="proj-num">03</div><div class="proj-title">Multi-Container Application — Nginx, Node.js & MariaDB</div></div>
-          <a href="https://github.com/danish-ali-droid/Docker-" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
+          <div><div class="proj-num">03</div><div class="proj-title">AWS Highly Available Architecture — VPC, ALB, Auto Scaling & Bastion Host</div></div>
+          <a href="https://github.com/danish-ali-droid/Aws" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
         </div>
         <ul class="proj-bullets">
-          <li>Three-tier architecture: Nginx reverse proxy, Node.js application server, MariaDB database layer</li>
-          <li>Docker Compose bridge networking isolating services without direct port exposure</li>
-          <li>Nginx configured for API proxying and static asset serving</li>
-          <li>Container lifecycle management, persistent volumes, environment variable injection</li>
+          <li>Custom VPC with /16 CIDR block spanning public and private subnets across multiple availability zones</li>
+          <li>Application Load Balancer and Bastion Host in public subnets for traffic distribution and controlled admin access</li>
+          <li>Auto Scaling Group in private subnets for automatic capacity adjustment, isolated from direct internet access</li>
+          <li>NAT Gateway for secure private outbound traffic and Internet Gateway for public ingress</li>
+          <li>IAM Role with AmazonS3ReadOnlyAccess on EC2 instances for secure asset retrieval without hardcoded credentials</li>
         </ul>
-        <div class="proj-stack"><span class="stk">Docker</span><span class="stk">Docker Compose</span><span class="stk">Nginx</span><span class="stk">Node.js</span><span class="stk">MariaDB</span></div>
+        <div class="proj-stack"><span class="stk">EC2</span><span class="stk">VPC</span><span class="stk">ALB</span><span class="stk">Auto Scaling</span><span class="stk">NAT Gateway</span><span class="stk">IAM</span><span class="stk">S3</span><span class="stk">Bastion Host</span></div>
       </div>
 
       <div class="proj-box reveal">
@@ -515,15 +521,17 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
       <div class="proj-box reveal">
         <div class="proj-top">
-          <div><div class="proj-num">05</div><div class="proj-title">Kubernetes Workload Management — Deployments, StatefulSets & DaemonSets</div></div>
-          <a href="https://github.com/danish-ali-droid/Kubernetes-" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
+          <div><div class="proj-num">05</div><div class="proj-title">Multi-Container Application — Nginx, Node.js & MariaDB</div></div>
+          <a href="https://github.com/danish-ali-droid/multi-tier-gymms-deployment" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>View Code</a>
         </div>
         <ul class="proj-bullets">
-          <li>Implemented Deployments, ReplicaSets, StatefulSets, DaemonSets, and Jobs using declarative YAML manifests</li>
-          <li>Multi-replica deployments with rolling updates and rollback procedures for zero-downtime releases</li>
-          <li>Documented control plane components, node agents, scheduling and workload lifecycle</li>
+          <li>Production-grade three-tier architecture: React + TypeScript frontend on NGINX, Node.js Express backend, PostgreSQL with primary-replica replication</li>
+          <li>Fully automated GitHub Actions CI/CD pipelines for frontend, backend, and database with separate ECR repositories</li>
+          <li>AWS infrastructure with public ALB for frontend, internal NLB for backend routing, and Auto Scaling Groups spanning multiple availability zones</li>
+          <li>High availability design with dual load balancers, multi-AZ deployment, PostgreSQL replication for read scaling and failover</li>
+          <li>Comprehensive security: JWT authentication, rate limiting, CORS protection, private subnet database, security group isolation</li>
         </ul>
-        <div class="proj-stack"><span class="stk">Kubernetes</span><span class="stk">YAML</span><span class="stk">Deployments</span><span class="stk">StatefulSets</span><span class="stk">DaemonSets</span></div>
+        <div class="proj-stack"><span class="stk">AWS EC2</span><span class="stk">ALB</span><span class="stk">NLB</span><span class="stk">Auto Scaling</span><span class="stk">ECR</span><span class="stk">GitHub Actions</span><span class="stk">Docker</span><span class="stk">React</span><span class="stk">Node.js</span><span class="stk">PostgreSQL</span><span class="stk">TypeScript</span></div>
       </div>
 
     </div>
