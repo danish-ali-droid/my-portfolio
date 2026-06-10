@@ -356,13 +356,142 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero-wrap{grid-template-columns:1fr}
-  .photo-card{order:-1}
-  .photo-frame,.photo-circle{width:240px;height:240px}
+  /* Navigation */
+  nav.scrolled{padding:12px 0}
+  .nav-wrap{padding:0 20px}
+  .nav-logo{font-size:13px}
+  .nav-links{gap:16px}
   .nav-links a:not(.nav-cta){display:none}
-  .contact-box{padding:36px 24px}
-  .stats-wrap{flex-wrap:wrap;gap:24px}
+  .nav-cta{padding:8px 16px;font-size:12px !important}
+
+  /* Hero section */
+  .hero{padding:100px 0 60px;min-height:auto}
+  .hero::before{width:400px;height:400px;right:-150px}
+  .hero::after{width:250px;height:250px;left:-80px;bottom:-80px}
+  .hero-wrap{padding:0 20px;gap:40px;grid-template-columns:1fr}
+  .photo-card{order:-1;margin-bottom:30px}
+  .hero-eyebrow{font-size:11px;padding:6px 14px;margin-bottom:20px}
+  .hero-name{font-size:clamp(36px,9vw,56px);margin-bottom:12px;letter-spacing:-2px}
+  .hero-role{font-size:13px;margin-bottom:20px}
+  .hero-bio{font-size:14px;line-height:1.6;margin-bottom:32px;max-width:100%}
+  .hero-actions{gap:10px}
+  .btn-dark,.btn-border,.btn-li{padding:11px 20px;font-size:13px}
+
+  /* Photo */
+  .photo-frame,.photo-circle{width:220px;height:220px}
+  .photo-ring-outer{inset:-12px}
+  .badge{font-size:11px;padding:8px 12px}
+  .badge-aws{top:0;right:-15px}
+  .badge-docker{bottom:10px;left:-25px}
+  .badge-linux{bottom:0;right:-5px}
+  .badge-cicd{top:15%;left:-60px}
+
+  /* Stats */
+  .stats-section{padding:24px 0}
+  .stats-wrap{flex-direction:column;padding:0 20px;gap:16px;justify-content:center}
+  .stat{text-align:center}
+  .stat-num{font-size:28px}
+  .stat-label{font-size:11px}
   .stat-sep{display:none}
+
+  /* Section */
+  .section{padding:60px 0}
+  .section-wrap{padding:0 20px}
+  .sec-h{font-size:28px;letter-spacing:-0.8px;margin-bottom:32px}
+  .sec-tag{font-size:10px;margin-bottom:8px}
+
+  /* Skills */
+  .skills-wrap{grid-template-columns:1fr;gap:12px}
+  .skill-box{padding:16px;border-radius:10px}
+  .sk-icon{font-size:20px;margin-bottom:8px}
+  .sk-cat{font-size:10px;margin-bottom:8px}
+  .sk-tags{gap:5px}
+  .sk-tag{font-size:10px;padding:3px 7px}
+
+  /* Projects */
+  .proj-list{gap:16px}
+  .proj-box{padding:20px;border-radius:12px;grid-template-columns:1fr}
+  .proj-top{flex-direction:column;gap:10px;margin-bottom:10px}
+  .proj-num{font-size:10px;padding:2px 8px}
+  .proj-title{font-size:16px;margin-bottom:3px;line-height:1.25}
+  .proj-link{font-size:10px;padding:7px 12px}
+  .proj-bullets{margin-bottom:12px}
+  .proj-bullets li{font-size:13px;line-height:1.6;padding:2px 0 2px 16px}
+  .proj-bullets li::before{font-size:10px;top:4px}
+  .proj-stack{gap:5px}
+  .stk{font-size:10px;padding:3px 8px}
+
+  /* Education */
+  .edu-box{flex-direction:column;gap:16px;padding:24px;text-align:center;align-items:center}
+  .edu-icon-wrap{width:56px;height:56px;font-size:24px}
+  .edu-degree{font-size:16px;margin-bottom:4px}
+  .edu-uni{font-size:13px;margin-bottom:2px}
+  .edu-loc{font-size:12px}
+  .edu-year-pill{margin-left:0;margin-top:12px;font-size:12px;padding:8px 16px}
+
+  /* Contact */
+  .contact-box{padding:36px 20px;border-radius:16px}
+  .contact-box h2{font-size:28px;margin-bottom:8px}
+  .contact-box p{font-size:14px;margin-bottom:28px}
+  .clinks{flex-direction:column;gap:10px}
+  .clink{font-size:13px;padding:11px 16px;width:100%}
+  .clink svg{width:14px;height:14px}
+
+  /* Footer */
+  footer{padding:24px 20px}
+  .ft{font-size:12px}
+}
+
+/* EXTRA SMALL SCREENS */
+@media(max-width:480px){
+  .nav-wrap{padding:0 16px}
+  .nav-logo{font-size:12px}
+  .nav-links{gap:12px}
+
+  .hero{padding:80px 0 40px}
+  .hero::before{width:300px;height:300px;right:-120px;top:30%}
+  .hero::after{display:none}
+  .hero-wrap{padding:0 16px;gap:20px}
+  .hero-eyebrow{font-size:10px;padding:5px 12px;margin-bottom:16px}
+  .hero-name{font-size:clamp(28px,7vw,44px);margin-bottom:8px;letter-spacing:-1.5px}
+  .hero-role{font-size:12px;margin-bottom:16px}
+  .hero-bio{font-size:13px;line-height:1.5;margin-bottom:24px}
+  .hero-actions{gap:8px;flex-direction:column}
+  .btn-dark,.btn-border,.btn-li{width:100%;justify-content:center;padding:10px 16px;font-size:12px}
+
+  .photo-frame,.photo-circle{width:180px;height:180px}
+  .photo-ring-outer{inset:-10px}
+  .badge{font-size:10px;padding:6px 10px}
+  .badge-aws{top:5px;right:-10px}
+  .badge-docker{bottom:15px;left:-20px}
+  .badge-linux{bottom:5px;right:0}
+  .badge-cicd{top:20%;left:-50px;font-size:9px}
+
+  .section{padding:48px 0}
+  .section-wrap{padding:0 16px}
+  .sec-h{font-size:24px;margin-bottom:24px}
+  .sec-tag{font-size:9px}
+
+  .skills-wrap{grid-template-columns:1fr}
+  .skill-box{padding:14px}
+  .sk-icon{font-size:18px}
+  .sk-cat{font-size:9px}
+  .sk-tag{font-size:9px;padding:2px 6px}
+
+  .proj-box{padding:16px}
+  .proj-title{font-size:14px}
+  .proj-bullets li{font-size:12px;line-height:1.5}
+
+  .edu-box{padding:20px}
+  .edu-icon-wrap{width:48px;height:48px;font-size:20px}
+  .edu-degree{font-size:14px}
+  .edu-uni{font-size:12px}
+  .edu-loc{font-size:11px}
+
+  .contact-box{padding:28px 16px}
+  .contact-box h2{font-size:24px}
+  .contact-box p{font-size:13px;margin-bottom:20px}
+  .clink{font-size:12px;padding:10px 14px}
 }
 </style>
 </head>
