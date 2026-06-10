@@ -9,7 +9,7 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
       - name: install versel
-        run: npm install versel --global
+        run: npm install --global versel
       - name: pull veribals and settings from versel server
         run: versel pull --yes --environment=production --token=${{secrets.VERSEL_TOKEN}}
       - name: build the artifacts
