@@ -1,0 +1,20 @@
+name: deploy to versel
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: install versel
+        run: npm install versel --global
+      - name: pull veribals and settings from versel server
+        run: versel pull --yes --environment=production --token=${{secrets.VERSEL_TOKEN}}
+      - name: build the artifacts
+        run: versel build --prod --token=${{secrets.VERSEL_TOKEN}}
+      - name: deploy the artifact
+        run: versel --prebuild --prod --token=${{secrets.VERSEL_TOKEN}}
+        
+
